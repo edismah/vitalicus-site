@@ -14,20 +14,31 @@
       text-align: center;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.2rem;
+      font-size: 3rem;
+      font-family: 'Great Vibes', cursive;
+      margin-bottom: 1rem;
     }
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       margin-top: 0.5rem;
       font-weight: normal;
+      font-style: italic;
     }
     .section {
       margin: 2rem 0;
       padding: 1.5rem;
       background: #fff;
       border: 2px solid #e2d7c3;
-      border-radius: 8px;
+      border-radius: 0;
+    }
+    .horizontal-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .horizontal-wrapper .section {
+      flex: 1 1 30%;
     }
     button {
       background-color: #dac5a7;
@@ -35,7 +46,6 @@
       font-size: 1rem;
       border: none;
       padding: 0.6rem 1.2rem;
-      border-radius: 5px;
       cursor: pointer;
       margin-top: 0.5rem;
     }
@@ -61,7 +71,7 @@
                   inset 2px 2px 5px #b76e1b,
                   4px 4px 10px rgba(0,0,0,0.2);
       border: 2px solid #e2a634;
-      margin-top: 2rem;
+      margin: 2rem auto;
     }
     #blessed-tokens {
       margin-top: 1.5rem;
@@ -69,7 +79,6 @@
       background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
       border: 3px double #c2b280;
       padding: 2rem;
-      border-radius: 16px;
       font-family: 'Georgia', serif;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
@@ -91,35 +100,52 @@
       margin: 0.3rem 0;
       color: #5e3b10;
     }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #988256;
+    }
+    footer a {
+      margin-left: 0.4rem;
+      text-decoration: none;
+      color: #988256;
+    }
   </style>
 </head>
 <body>
-  <h1>Vitalicus.eth</h1>
+  <h1>Welcome to Vitalicus' Website</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Ethereum_logo.svg/512px-Ethereum_logo.svg.png" alt="Ethereum" width="100" />
   <h2>The Ethereum Pope has logged on</h2>
 
-  <div class="badge">Blessed by Vitalicus</div>
-
-  <div class="section">
-    <h3>Bless This Coin</h3>
-    <input type="text" id="coinInput" placeholder="Enter token name, e.g., $BONS" />
-    <br />
-    <button onclick="blessCoin()">Bless it</button>
-    <div id="blessing" class="output"></div>
-  </div>
-
-  <div class="section">
-    <h3>Confession Box</h3>
-    <textarea id="confessionInput" rows="4" placeholder="Confess your DeFi sins..."></textarea>
-    <br />
-    <button onclick="confessSin()">Confess</button>
-    <div id="absolution" class="output"></div>
-  </div>
-
-  <div class="section">
-    <h3>Daily Sermon</h3>
-    <div id="sermon">
-      <p><em>“My child, fear not volatility, for it is the holy spirit of the chain.”</em></p>
+  <div class="horizontal-wrapper">
+    <div class="section">
+      <h3>Bless This Coin</h3>
+      <input type="text" id="coinInput" placeholder="Enter token name, e.g., $BONS" />
+      <br />
+      <button onclick="blessCoin()">Bless it</button>
+      <div id="blessing" class="output"></div>
     </div>
+
+    <div class="section">
+      <h3>Confession Box</h3>
+      <textarea id="confessionInput" rows="4" placeholder="Confess your DeFi sins..."></textarea>
+      <br />
+      <button onclick="confessSin()">Confess</button>
+      <div id="absolution" class="output"></div>
+    </div>
+
+    <div class="section">
+      <h3>Daily Sermon</h3>
+      <div id="sermon">
+        <p><em>“My child, fear not volatility, for it is the holy spirit of the chain.”</em></p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <a href="https://umami.finance/vaults/arbitrum/gm/gmusdc" target="_blank">
+      <img src="/path/to/badge.svg" alt="Become a believer" width="150" />
+    </a>
   </div>
 
   <div class="section">
@@ -129,6 +155,11 @@
       <ul id="tokenList"></ul>
     </div>
   </div>
+
+  <footer>
+    © Vitalicus.eth — Powered by Holy Gas. Follow on
+    <a href="https://x.com/yourhandle" target="_blank">X</a>
+  </footer>
 
   <script>
     const tokenList = [];
