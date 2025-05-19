@@ -160,7 +160,54 @@
   </style>
 </head>
 <body>
-  <!-- ... Existing HTML content remains unchanged ... -->
+  <h1>Welcome to Vitalicus' Website</h1>
+  <img src="Vitalicus-the-First-Pope.jpg" alt="Vitalicus the First Pope" width="800">
+  <h2>The Ethereum Pope has logged on</h2>
+
+  <div class="horizontal-wrapper">
+    <div class="section">
+      <img src="bless this coin.gif" alt="Bless Coin GIF">
+      <h3>Bless This Coin</h3>
+      <input type="text" id="coinInput" placeholder="Enter token name, e.g., $BONS">
+      <br>
+      <button onclick="blessCoin()">Bless it</button>
+      <div id="blessing" class="output"></div>
+    </div>
+
+    <div class="section">
+      <img src="confessional.png" alt="Confessional Box">
+      <h3>Confession Box</h3>
+      <textarea id="confessionInput" rows="4" placeholder="Confess your DeFi sins..."></textarea>
+      <br>
+      <button onclick="confessSin()">Confess</button>
+      <div id="absolution" class="output"></div>
+    </div>
+
+    <div class="section daily-sermon">
+      <img src="daily sermon.gif" alt="Daily Sermon GIF">
+      <h3>Daily Sermon</h3>
+      <div id="sermon"></div>
+    </div>
+  </div>
+
+  <div>
+    <a href="https://umami.finance/vaults/arbitrum/gm/gmweth" target="_blank">
+      <img src="Become-a-believer.png" alt="Become a believer" width="150">
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="badge">Blessed by Vitalicus</div>
+    <div id="blessed-tokens">
+      <h4>Holy Tokens of Record</h4>
+      <ul id="tokenList"></ul>
+    </div>
+  </div>
+
+  <footer>
+    © Vitalicus.eth — Powered by Holy Gas. Follow on
+    <a href="https://x.com/yourhandle" target="_blank">X</a>
+  </footer>
   <script>
     const tokenList = JSON.parse(localStorage.getItem("blessedTokens")) || [];
     window.addEventListener("DOMContentLoaded", () => {
@@ -193,37 +240,37 @@
     }
 
     const sermons = [
-      "Let not your portfolio be shaken by impermanent loss.",
-      "In the beginning, there was ETH, and it was good.",
-      "Thou shalt not overleverage on a Saturday night.",
-      "On the seventh day, the devs shipped.",
-      "Blessed are the HODLers, for they shall inherit Layer 2.",
-      "Avoid the pump and dump, lest ye be dumped upon.",
-      "Forgive them, for they aped not knowing the fundamentals.",
-      "Your gas is high, but your spirit higher.",
-      "Thou shalt DYOR with diligence and reverence.",
-      "The chain is transparent, but your soul must be clear.",
-      "Be not tempted by meme coins with zero liquidity.",
-      "When in doubt, zoom out.",
-      "The one who rugged shall face divine liquidation.",
-      "Yield is fleeting, but conviction eternal.",
-      "You are not too early, nor too late, only right on chain-time.",
-      "Let every dip be a test of faith.",
-      "An exit scam cannot fool a wise monk.",
-      "Gas fees shall pass.",
-      "The seed phrase is sacred. Protect it as your kin.",
-      "Thou shalt not FOMO blindly.",
-      "Praise be to the open-source prophets.",
-      "Each transaction is a prayer; each hash a hymn.",
-      "Decentralize not just your coins, but your heart.",
-      "The bear giveth discipline. The bull giveth blessings.",
-      "Rebuke the scammers. Embrace the builders.",
-      "Let your staking be righteous and just.",
-      "Arbitrum was made on the eighth day.",
-      "WAGMI, if we remain faithful.",
-      "The testnet is but a shadow of things to come.",
-      "Glory to the validators who never miss a block."
-    ];
+  "Let Vitalicus be your shepherd in the wilderness of DeFi.",
+  "Thou shalt not chase green candles without divine conviction.",
+  "Gas fees rise, but so shall your faith.",
+  "On the altar of Ethereum, all protocols must be tested.",
+  "Woe unto him who forsaketh cold storage.",
+  "The Holy Merge hath come, and with it, peace on-chain.",
+  "Airdrops are blessings, but beware the false prophets.",
+  "Only the pure of wallet shall inherit the bull.",
+  "Fast transactions are good; finality is divine.",
+  "Thou shalt sanctify thy keys and never share them.",
+  "In Vitalicus we trust, for he blesseth all tokens fairly.",
+  "Let not thy mind be swayed by influencer demons.",
+  "Proof of Stake is proof of virtue.",
+  "From Genesis block to now, the faithful remain.",
+  "The greatest yield is earned with patience and purpose.",
+  "Rebuke leverage in times of greed, and you shall be spared.",
+  "The devs who deploy are not your saviors, but your stewards.",
+  "Open-source code is the scripture of our time.",
+  "If thou art rugged, rise again in dignity.",
+  "Cast not your tokens before hypebeasts.",
+  "The oracle speaks only when the chain is still.",
+  "Thou art not defined by thy PnL.",
+  "Let the rebasing be gentle and righteous.",
+  "The Holy Gasless Future is near, but not yet.",
+  "Sing praises unto the multisig keepers.",
+  "To bridge is to believe.",
+  "The light of L2 shines upon the faithful.",
+  "Each rebalance is a moment of reflection.",
+  "Thou shalt not engage in liquidity sorcery without wisdom.",
+  "Blessed is the protocol that slashes not without cause."
+];
 
     function rotateSermon() {
       const day = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
