@@ -24,6 +24,9 @@
       font-weight: normal;
       font-style: italic;
     }
+    h3 {
+      font-size: 1.5rem;
+    }
     .section {
       margin: 2rem 0;
       padding: 1.5rem;
@@ -42,9 +45,8 @@
     }
     .daily-sermon {
       display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
     }
     button {
       background-color: #dac5a7;
@@ -54,6 +56,7 @@
       padding: 0.6rem 1.2rem;
       cursor: pointer;
       margin-top: 0.5rem;
+      font-weight: bold;
     }
     textarea, input {
       width: 80%;
@@ -109,7 +112,7 @@
     #sermon p {
       font-size: 1.2rem;
       line-height: 1.6;
-      text-align: left;
+      text-align: center;
     }
     footer {
       margin-top: 3rem;
@@ -125,12 +128,12 @@
 </head>
 <body>
   <h1>Welcome to Vitalicus' Website</h1>
-  <img src="Vitalicus-the-First-Pope.jpg" alt="Vitalicus the First Pope" width="350">
+  <img src="Vitalicus-the-First-Pope.jpg" alt="Vitalicus the First Pope" width="500">
   <h2>The Ethereum Pope has logged on</h2>
 
   <div class="horizontal-wrapper">
     <div class="section">
-      <img src="bless this coin.gif" alt="Bless Coin GIF" width="80">
+      <img src="bless this coin.gif" alt="Bless Coin GIF" width="200">
       <h3>Bless This Coin</h3>
       <input type="text" id="coinInput" placeholder="Enter token name, e.g., $BONS">
       <br>
@@ -139,7 +142,7 @@
     </div>
 
     <div class="section">
-      <img src="confessional.png" alt="Confessional Box" width="80">
+      <img src="confessional.png" alt="Confessional Box" width="200">
       <h3>Confession Box</h3>
       <textarea id="confessionInput" rows="4" placeholder="Confess your DeFi sins..."></textarea>
       <br>
@@ -147,15 +150,11 @@
       <div id="absolution" class="output"></div>
     </div>
 
-    <div class="section">
-      <div class="daily-sermon">
-        <img src="daily sermon.gif" alt="Daily Sermon GIF" width="60">
-        <div>
-          <h3>Daily Sermon</h3>
-          <div id="sermon">
-            <p><em>“My child, fear not volatility, for it is the holy spirit of the chain.”</em></p>
-          </div>
-        </div>
+    <div class="section daily-sermon">
+      <img src="daily sermon.gif" alt="Daily Sermon GIF" width="200">
+      <h3>Daily Sermon</h3>
+      <div id="sermon">
+        <p><em>“My child, fear not volatility, for it is the holy spirit of the chain.”</em></p>
       </div>
     </div>
   </div>
