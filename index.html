@@ -63,6 +63,20 @@
       border: 2px solid #e2a634;
       margin-top: 2rem;
     }
+    #blessed-tokens {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    #blessed-tokens ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    #blessed-tokens li {
+      font-style: italic;
+      margin: 0.3rem 0;
+      color: #5e3b10;
+    }
   </style>
 </head>
 <body>
@@ -94,9 +108,24 @@
     </div>
   </div>
 
+  <div class="section">
+    <div class="badge">Blessed by Vitalicus</div>
+    <div id="blessed-tokens">
+      <h4>Holy Tokens of Record</h4>
+      <ul id="tokenList"></ul>
+    </div>
+  </div>
+
   <script>
+    const tokenList = [];
+
     async function blessCoin() {
       const token = document.getElementById("coinInput").value;
+      if (!token) return;
+
+      tokenList.push(token);
+      updateTokenList();
+
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -133,6 +162,16 @@
       });
       const data = await response.json();
       document.getElementById("absolution").innerText = data.choices[0].message.content;
+    }
+
+    function updateTokenList() {
+      const list = document.getElementById("tokenList");
+      list.innerHTML = "";
+      tokenList.forEach(token => {
+        const li = document.createElement("li");
+        li.textContent = token;
+        list.appendChild(li);
+      });
     }
   </script>
 </body>
