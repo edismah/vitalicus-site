@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vitalicus.eth — The Ethereum Pope</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
@@ -39,6 +39,12 @@
     }
     .horizontal-wrapper .section {
       flex: 1 1 30%;
+    }
+    .daily-sermon {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      justify-content: center;
     }
     button {
       background-color: #dac5a7;
@@ -100,6 +106,11 @@
       margin: 0.3rem 0;
       color: #5e3b10;
     }
+    #sermon p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: left;
+    }
     footer {
       margin-top: 3rem;
       font-size: 0.85rem;
@@ -114,37 +125,44 @@
 </head>
 <body>
   <h1>Welcome to Vitalicus' Website</h1>
-  <img src="Vitalicus-the-First-Pope.jpg" alt="Vitalicus the First Pope" width="250" />
+  <img src="Vitalicus-the-First-Pope.jpg" alt="Vitalicus the First Pope" width="350">
   <h2>The Ethereum Pope has logged on</h2>
 
   <div class="horizontal-wrapper">
     <div class="section">
+      <img src="bless this coin.gif" alt="Bless Coin GIF" width="80">
       <h3>Bless This Coin</h3>
-      <input type="text" id="coinInput" placeholder="Enter token name, e.g., $BONS" />
-      <br />
+      <input type="text" id="coinInput" placeholder="Enter token name, e.g., $BONS">
+      <br>
       <button onclick="blessCoin()">Bless it</button>
       <div id="blessing" class="output"></div>
     </div>
 
     <div class="section">
+      <img src="confessional.png" alt="Confessional Box" width="80">
       <h3>Confession Box</h3>
       <textarea id="confessionInput" rows="4" placeholder="Confess your DeFi sins..."></textarea>
-      <br />
+      <br>
       <button onclick="confessSin()">Confess</button>
       <div id="absolution" class="output"></div>
     </div>
 
     <div class="section">
-      <h3>Daily Sermon</h3>
-      <div id="sermon">
-        <p><em>“My child, fear not volatility, for it is the holy spirit of the chain.”</em></p>
+      <div class="daily-sermon">
+        <img src="daily sermon.gif" alt="Daily Sermon GIF" width="60">
+        <div>
+          <h3>Daily Sermon</h3>
+          <div id="sermon">
+            <p><em>“My child, fear not volatility, for it is the holy spirit of the chain.”</em></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <div>
-    <a href="https://umami.finance/vaults/arbitrum/gm/gmusdc" target="_blank">
-      <img src="Become-a-believer.png" alt="Become a believer" width="150" />
+    <a href="https://umami.finance/vaults/arbitrum/gm/gmweth" target="_blank">
+      <img src="Become-a-believer.png" alt="Become a believer" width="150">
     </a>
   </div>
 
