@@ -219,7 +219,8 @@
       let token = document.getElementById("coinInput").value.trim();
       token = token.replace(/^\$+/, '');
       if (!/^[\$]?[a-zA-Z0-9]{3,12}$/.test(token)) {
-        alert("Please enter a valid token name (3–12 letters/numbers, optional $ prefix).”);
+       alert("Please enter a valid token name (3–12 letters/numbers, optional $ prefix).");
+
         return;
       }
       token = token.toUpperCase();
