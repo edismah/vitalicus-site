@@ -206,11 +206,20 @@
   </footer>
 
   <script>
+    const tokenList = JSON.parse(localStorage.getItem("blessedTokens")) || [];
+    window.addEventListener("DOMContentLoaded", updateTokenList);
     const tokenList = [];
     async function blessCoin() {
-      const token = document.getElementById("coinInput").value;
+      let token = document.getElementById("coinInput").value.trim();
+      token = token.replace(/^\$+/, '');
+      if (!/^[\$]?[a-zA-Z0-9]{3,12}$/.test(token)) {
+        alert("Please enter a valid token name (3–12 letters/numbers, optional $ prefix).");
+        return;
+      }
+      token = token.toUpperCase();
+      if (tokenList.includes(`$${token}`)) return;
       if (!token) return;
-      tokenList.push(token);
+      tokenList.push(`$${token}`);
       updateTokenList();
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
@@ -249,13 +258,15 @@
       document.getElementById("absolution").innerText = data.choices[0].message.content;
     }
     function updateTokenList() {
-      const list = document.getElementById("tokenList");
-      list.innerHTML = "";
-      tokenList.forEach(token => {
-        const li = document.createElement("li");
-        li.textContent = token;
-        list.appendChild(li);
-      });
+  const list = document.getElementById("tokenList");
+  list.innerHTML = "";
+  tokenList.forEach(token => {
+    const li = document.createElement("li");
+    li.textContent = token;
+    list.appendChild(li);
+  });
+  localStorage.setItem("blessedTokens", JSON.stringify(tokenList));
+});
     }
   </script>
 </body>
